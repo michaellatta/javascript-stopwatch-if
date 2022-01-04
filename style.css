@@ -1,0 +1,29 @@
+* {
+    background-color: #D3D3D3;
+}
+
+.container {
+    height: 300px;
+    width: 100%;
+}
+
+#title {
+    font-size: 72px;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    color: #000080;
+}
+
+#display {
+    width: 100%;
+    font-size: 100px;
+    text-align: center;
+    margin: 0px auto;
+    font-family: 'Open Sans', sans-serif;
+    color: #000080;
+}
+
+.buttons {
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+}
