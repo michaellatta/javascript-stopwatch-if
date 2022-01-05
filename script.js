@@ -1,24 +1,20 @@
-// Define vars to hol time values
+// Define vars to hold time values and status
 
-let seconds = 0;
-let minutes = 0;
-let hours = 0;
+let seconds, minutes, hours, status, interval;
 
-// Define vars to hold "display" value
-let displaySeconds = 0;
-let displayMinutes = 0;
-let displayHours = 0;
-
-//Define var to hold setInterval() function
-
-let interval = null;
-
-//Define var to hold stopwatch status
-let status = "stopped";
+function init() {
+    window.clearInterval(interval);
+    seconds = 0;
+    minutes = 0;
+    hours = 0;
+    document.getElementById("display").innerHTML = "00:00:00";
+    document.getElementById("startStop").innerHTML = "Start";
+    status = "stopped";
+}
 
 // Stopwatch function (logic to determine when to increment next value, etc.)
 
-function stopWatch(){
+function stopWatch() {
 
     seconds++;
 
@@ -78,14 +74,16 @@ function startStop(){
     }
 }
 
-//Function to reset the stopwatch
+// Operation            State
+// initialization       status="stopped"
+// start                status="started"
+// stop                 status="stopped"
+// start                status="started"
+// reset                status="started"
+// start                status="stopped"
+// start                status="started"
+
+// Function to reset the stopwatch
 function reset(){
-
-    window.clearInterval(interval);
-    seconds = 0;
-    minutes = 0;
-    hours = 0;
-    document.getElementById("display").innerHTML = "00:00:00";
-    document.getElementById("startStop".innerHTML = "Start");
-
+    init();
 }
